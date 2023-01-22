@@ -1,6 +1,9 @@
 ### Hi there 👋
 
 🌱 I’m currently learning react
+
+☕ This will be my first own website. I hope you enjoy it.
+
 <!--
 **mipopon/mipopon** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
