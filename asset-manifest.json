@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/mipopon.github.io/static/css/main.70c1a0f4.css",
-    "main.js": "/mipopon.github.io/static/js/main.98965c1e.js",
-    "static/js/787.e50ee5a4.chunk.js": "/mipopon.github.io/static/js/787.e50ee5a4.chunk.js",
-    "index.html": "/mipopon.github.io/index.html",
-    "main.70c1a0f4.css.map": "/mipopon.github.io/static/css/main.70c1a0f4.css.map",
-    "main.98965c1e.js.map": "/mipopon.github.io/static/js/main.98965c1e.js.map",
-    "787.e50ee5a4.chunk.js.map": "/mipopon.github.io/static/js/787.e50ee5a4.chunk.js.map"
+    "main.css": "/mipopon/static/css/main.70c1a0f4.css",
+    "main.js": "/mipopon/static/js/main.44e53776.js",
+    "static/js/787.e50ee5a4.chunk.js": "/mipopon/static/js/787.e50ee5a4.chunk.js",
+    "index.html": "/mipopon/index.html",
+    "main.70c1a0f4.css.map": "/mipopon/static/css/main.70c1a0f4.css.map",
+    "main.44e53776.js.map": "/mipopon/static/js/main.44e53776.js.map",
+    "787.e50ee5a4.chunk.js.map": "/mipopon/static/js/787.e50ee5a4.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.70c1a0f4.css",
-    "static/js/main.98965c1e.js"
+    "static/js/main.44e53776.js"
   ]
 }
