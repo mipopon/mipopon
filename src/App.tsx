@@ -7,7 +7,7 @@ const App = () => {
   const myRef = useRef<HTMLInputElement>(null);
 
   const executeScroll = () =>
-    myRef?.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    myRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
 
   return (
     <>
