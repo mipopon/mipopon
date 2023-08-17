@@ -1,36 +1,62 @@
-import { useRef, useState } from 'react';
+import { UIEvent, useEffect, useRef, useState } from 'react';
 import { FiChevronsDown } from 'react-icons/fi';
 
+import BasicTimeline from './components/BasicTimeline/BasicTimeline';
 import FullPageContainer from './components/FullPageContainer/FullpageContainer';
+import Circle from './components/Circle/Circle';
 
 const App = () => {
-  const nextSection = useRef<HTMLInputElement>(null);
-  const [scrollDown, setScrollDown] = useState(true);
+  const firstSection = useRef<HTMLInputElement>(null);
+  const secondSection = useRef<HTMLInputElement>(null);
+  const [showButton, setShowButton] = useState(true);
 
-  const executeScroll = () =>
-    nextSection.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  const executeScroll = () => {
+    setShowButton(false);
+    secondSection.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      console.log(window.scrollY);
+      if (window.scrollY <= 15) setShowButton(true);
+      if (showButton && window.scrollY > 15) setShowButton(false);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  });
 
   return (
-    <>
-      <FullPageContainer count={0}>
+    <div>
+      <FullPageContainer>
         <h1 className='text-4xl'>Timeline Title</h1>
         <button
-          onScroll={() => {
-            setScrollDown(false);
-          }}
-          className={'fixed bottom-12 text-4xl' + (scrollDown ? '' : ' hidden')}
+          className={showButton ? 'fixed bottom-12' : 'fixed bottom-12 hidden'}
           onClick={executeScroll}
         >
-          <FiChevronsDown />
+          <FiChevronsDown className='text-4xl' />
         </button>
       </FullPageContainer>
-      <FullPageContainer count={1}>
-        <h1 ref={nextSection}>Next Screen</h1>
+      <hr />
+      <FullPageContainer>
+        <h1 ref={firstSection}>Next Screen</h1>
+        <div className='absolute block'>
+          <BasicTimeline />
+        </div>
       </FullPageContainer>
-      <FullPageContainer count={2}>
-        <h1>Next Next Screen</h1>
+      <hr />
+      <FullPageContainer>
+        <div ref={secondSection} className='flex flex-col space-y-2'>
+        <Circle />
+        <Circle />
+        <Circle />
+        <Circle />
+        </div>
       </FullPageContainer>
-    </>
+    </div>
   );
 };
 
