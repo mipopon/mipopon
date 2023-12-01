@@ -3,7 +3,9 @@
   "automerge": true,
   "automergeType": "pr",
   "lockFileMaintenance": {
-    "automerge": true
+    "automerge": true,
+    "matchCurrentVersion": "!/^0/",
+    "matchUpdateTypes": ["minor", "patch"],
   },
   "minor": {
     "automerge": true
