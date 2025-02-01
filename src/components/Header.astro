@@ -3,6 +3,7 @@ import HeaderLink from './HeaderLink.astro';
 import { SITE_TITLE } from '../consts';
 import { getLangFromUrl } from '../i18n/utils';
 import { getRelativeLocaleUrl } from 'astro:i18n';
+import LanguagePicker from './language-picker.astro';
 
 const lang = getLangFromUrl(Astro.url);
 ---
@@ -11,9 +12,9 @@ const lang = getLangFromUrl(Astro.url);
 	<nav>
 		<h2><a href=`/${lang}`>{SITE_TITLE}</a></h2>
 		<div class="internal-links">
-			<HeaderLink href={getRelativeLocaleUrl(lang)}>Home</HeaderLink>
-			<HeaderLink href={getRelativeLocaleUrl(lang, '/blog')}>Blog</HeaderLink>
-			<HeaderLink href={getRelativeLocaleUrl(lang, '/about')}>About</HeaderLink>
+			<HeaderLink href=`/${lang}`>Home</HeaderLink>
+			<HeaderLink href=`/${lang}/blog`>Blog</HeaderLink>
+			<HeaderLink href=`/${lang}/about`>About</HeaderLink>
 		</div>
 		<div class="social-links">
 			<a href="https://github.com/mipopon" target="_blank">
@@ -25,6 +26,7 @@ const lang = getLangFromUrl(Astro.url);
 					></path></svg
 				>
 			</a>
+			<LanguagePicker />
 		</div>
 	</nav>
 </header>
