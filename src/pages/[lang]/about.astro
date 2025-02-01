@@ -1,5 +1,14 @@
 ---
-import Layout from '../layouts/BlogPost.astro';
+import { languages } from '../../i18n/ui';
+import Layout from '../../layouts/BlogPost.astro';
+
+export async function getStaticPaths() {
+	return Object.keys(languages).map(lang => {
+		return { 
+			params: { lang }
+		};
+	});
+}
 ---
 
 <Layout

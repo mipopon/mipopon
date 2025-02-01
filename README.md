@@ -1,5 +1,7 @@
 ## Hi there 👋
 
+<!-- available soon on [mipopon.com](https://mipopon.com) -->
+
 <!--
 **mipopon/mipopon** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
