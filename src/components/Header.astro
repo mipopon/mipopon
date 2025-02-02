@@ -2,8 +2,10 @@
 import HeaderLink from './HeaderLink.astro';
 import { SITE_TITLE } from '../consts';
 import { getLangFromUrl } from '../i18n/utils';
-import { getRelativeLocaleUrl } from 'astro:i18n';
-import LanguagePicker from './language-picker.astro';
+import LanguagePicker from './language-picker';
+
+
+const path = Astro.url.pathname.substring(4);
 
 const lang = getLangFromUrl(Astro.url);
 ---
@@ -26,7 +28,7 @@ const lang = getLangFromUrl(Astro.url);
 					></path></svg
 				>
 			</a>
-			<LanguagePicker />
+			<LanguagePicker client:load language="en" path={path}/>
 		</div>
 	</nav>
 </header>
